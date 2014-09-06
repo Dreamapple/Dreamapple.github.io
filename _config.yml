@@ -1,1 +1,2 @@
-baseurl: /Dreamapple.github.io
+baseurl: /
+permalink: /:title
