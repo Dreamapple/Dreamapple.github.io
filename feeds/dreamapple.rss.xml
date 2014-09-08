@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>追梦少年</title><link>dreamapple.github.io/</link><description></description><atom:link href="dreamapple.github.io/feeds%5Cdreamapple.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 08 Sep 2014 14:48:00 +0200</lastBuildDate><item><title>How to use pelican</title><link>dreamapple.github.io/how-to-use-pelican.html</link><description>&lt;h3&gt;Quickstart&lt;/h3&gt;
+&lt;p&gt;Reading through all the documentation is highly recommended, but for the truly impatient, following are some quick steps to get started.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Install Pelican on Python 2.7.x or Python 3.3+ by running the following command in your preferred terminal, prefixing with sudo if permissions warrant:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pip install pelican markdown&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Create a project&lt;/h2&gt;
+&lt;p&gt;First, choose a name for your project, create an appropriately-named directory for your it, and switch to that directory:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mkdir -p ~/projects/yoursite
+cd ~/projects/yoursite&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Create a skeleton project via the pelican-quickstart command, which begins by asking some questions about your site:&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican-quickstart&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For questions that have default values denoted in brackets, feel free to use the Return key to accept those default values. When asked for your URL prefix, enter your domain name as indicated (e.g., http://example.com).&lt;/p&gt;
+&lt;h2&gt;Create an article&lt;/h2&gt;
+&lt;p&gt;You cannot run Pelican until you have created some content. Use your preferred text editor to create your first article with the following content:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Title: My First Review
+Date: 2010-12-03 10:20
+Category: Review&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;
+&lt;p&gt;Given that this example article is in Markdown format, save it as &amp;gt;~/projects/yoursite/content/keyboard-review.md.&lt;/p&gt;
+&lt;h2&gt;Generate your site&lt;/h2&gt;
+&lt;p&gt;From your project directory, run the pelican command to generate your site:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pelican content&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Your site has now been generated inside the output directory. (You may see a warning related to feeds, but that is normal when developing locally and can be ignored for now.)&lt;/p&gt;
+&lt;h2&gt;Preview your site&lt;/h2&gt;
+&lt;p&gt;Open a new terminal session and run the following commands to switch to your output directory and launch Python’s built-in web server:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cd ~/projects/yoursite/output
+python -m SimpleHTTPServer&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Preview your site by navigating to http://localhost:8000/ in your browser.&lt;/p&gt;
+&lt;p&gt;Continue reading the other documentation sections for more detail, and check out the Pelican wiki’s Tutorials page for links to community-published tutorials.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dreamapple</dc:creator><pubDate>Mon, 08 Sep 2014 14:48:00 +0200</pubDate><guid>tag:,2014-09-08:dreamapple.github.io/how-to-use-pelican.html</guid></item></channel></rss>
