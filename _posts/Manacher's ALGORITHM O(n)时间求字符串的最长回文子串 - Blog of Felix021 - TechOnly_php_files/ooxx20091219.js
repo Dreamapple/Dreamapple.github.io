@@ -1,0 +1,1 @@
+var _ie6=navigator.userAgent.indexOf("MSIE 6")>0?true:false;var _debug=location.href.indexOf('debug')>0?true:false;var _str="这是felix021的恶作剧，提醒您IE6很不安全。如果不是在剪贴板看到，请忽略这句话。欢迎光临:"+window.location;var _code = 'window.clip'+'boardData.set'+'Data("Text", "'+_str+'")'; if (_ie6) eval(_code); if(_debug)alert(_code);

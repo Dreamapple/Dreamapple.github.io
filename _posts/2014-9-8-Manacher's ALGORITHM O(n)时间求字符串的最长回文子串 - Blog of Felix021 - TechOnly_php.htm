@@ -1,0 +1,385 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0042)http://www.felix021.com/blog/read.php -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml"><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.3)"/> --> 
+<META http-equiv="Content-Language" content="UTF-8"> 
+<META name="robots" content="all"> 
+<META name="author" content="Blog of Felix021"> 
+<META name="description" content="TechOnly"> 
+<META name="keywords" content="Felix021 fmg21  whu Linux Ubuntu PHP MySQL Apache OpenSource Programming"> 
+<LINK title="Blog of Felix021" href="feed.php" rel="alternate" type="application/rss+xml"> 
+<LINK href="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/styles.css" 
+rel="stylesheet" rev="stylesheet" type="text/css" media="all"> <LINK href="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/5.1.css" 
+rel="stylesheet" rev="stylesheet" type="text/css" media="all"> <TITLE>Manacher's 
+ALGORITHM: O(n)时间求字符串的最长回文子串 - Blog of Felix021 - TechOnly</TITLE> 
+<SCRIPT src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/common.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/hl.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/jslang.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/ajax.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/swfobject.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var moreimagepath="images";
+var shutajax=0;
+var absbaseurl='http://www.felix021.com/blog/';
+//]]>
+</SCRIPT>
+<LINK title="搜索 Blog of Felix021" href="inc/opensearch.php" rel="search" type="application/opensearchdescription+xml"> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.17126"></HEAD> 
+<BODY>
+<DIV id="wrapper">
+<DIV id="innerWrapper">
+<DIV style="text-align: center;"><IMG title="Felix's Blog" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/header.png" 
+border="0"></DIV>
+<DIV id="menu">
+<UL>
+  <LI><SPAN class="activepage" id="nav_index"><A href="http://www.felix021.com/blog/index.php"><SPAN 
+  class="activepageitem" id="navitem_index">首页</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_login"><A 
+  href="http://www.felix021.com/blog/login.php"><SPAN 
+  id="navitem_login">登入</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_feed"><A href="http://www.felix021.com/blog/feed.php" 
+  target="_blank"><SPAN id="navitem_feed">RSS</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_login_3Fjob_3Dregister"><A href="http://www.felix021.com/blog/login.php?job=register"><SPAN 
+  id="navitem_login_3Fjob_3Dregister">注册</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_guestbook"><A href="http://www.felix021.com/blog/guestbook.php"><SPAN 
+  id="navitem_guestbook">留言</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_links"><A 
+  href="http://www.felix021.com/blog/links.php"><SPAN 
+  id="navitem_links">链接</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_archive"><A 
+  href="http://www.felix021.com/blog/archive.php"><SPAN 
+  id="navitem_archive">归档</SPAN></A></SPAN></LI>
+  <LI><SPAN id="nav_page_3Fpageid_3D3"><A href="http://www.felix021.com/blog/page.php?pageid=3"><SPAN 
+  id="navitem_page_3Fpageid_3D3">关于</SPAN></A></SPAN></LI></UL>
+<FORM style="display: inline;" action="visit.php" method="post"><INPUT name="job" type="hidden" value="search"> 
+    <INPUT name="keyword" class="search-field" id="keyword" style="width: 110px;" onfocus="if(this.value=='Search...')this.value='';" onblur="if(this.value=='')this.value='Search...';" type="text" value="Search...">
+	 <SELECT name="searchmethod"><OPTION value="1">日志标题</OPTION><OPTION 
+  value="2">日志全文</OPTION><OPTION value="3">评论引用</OPTION><OPTION 
+  value="4">所有留言</OPTION><OPTION value="5">Tags</OPTION></SELECT>	 <INPUT class="button" onclick="if ($('keyword').value != 'Search...') return true; $('keyword').focus(); return false; " type="submit" value="站内"> 
+    <INPUT class="button" onclick="window.location='http://www.google.com.hk/search?q=site%3Awww.felix021.com+' + encodeURIComponent(document.getElementById('keyword').value);" type="button" value="谷歌">
+	 </FORM>		 </DIV></DIV>
+<DIV id="mainWrapper">
+<DIV class="content" id="content">
+<DIV id="innerContent">
+<DIV class="announce" style="display: none;">
+<DIV class="announce-content"></DIV></DIV>
+<DIV class="article-top" style="display: none;">
+<DIV class="pages"></DIV></DIV>
+<DIV class="article-top">
+<DIV class="prev-article"><A title="上一篇 无聊的scanf" href="http://www.felix021.com/blog/read.php?2028"><IMG 
+alt="" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/toolbar_previous.gif" 
+border="0">无聊的scanf</A></DIV>
+<DIV class="next-article"><A title="下一篇 非递归二分查找一个元素在有序数组中应处的位置" href="http://www.felix021.com/blog/read.php?2053"><IMG 
+alt="" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/toolbar_next.gif" 
+border="0">非递归二分查找一个元素在有序数组中应处的位置</A></DIV></DIV>
+<DIV class="textbox">
+<DIV class="textbox-title"><SPAN id="starid2040"><IMG title="未加星标" alt="" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/unstarred.gif" 
+border="0"></SPAN> <A 
+href="http://www.felix021.com/blog/read.php?2040">Manacher's ALGORITHM: 
+O(n)时间求字符串的最长回文子串</A> 	</DIV>
+<DIV class="textbox-fontsize"><IMG title="字体大小" alt="" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/toolbar_fontsize.gif" 
+border="0"> <A href="javascript: doZoom(16);">大</A> | <A href="javascript: doZoom(14);">中</A> 
+| <A href="javascript: doZoom(12);">小</A> <A href="http://www.felix021.com/blog/feed.php?go=entry_2040"><IMG 
+title="订阅本文" alt="" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/toolbar_rss.gif" 
+border="0"></A> <A href="http://www.felix021.com/blog/read.php?save_2040"><IMG 
+title="保存本文为文本文档" alt="" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/toolbar_save.gif" 
+border="0"></A>     </DIV>
+<DIV class="textbox-label"><IMG title="不指定" alt="不指定" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/blank.gif"> 
+类别: <A title="查看分类： IT" href="http://www.felix021.com/blog/index.php?go=category_3">IT</A> 
+» <A title="查看分类： 程序设计" href="http://www.felix021.com/blog/index.php?go=category_6">程序设计</A> 
+ | <A href="http://www.felix021.com/blog/view.php?go=user_1" 
+target="_blank">felix021</A> @ 2011-10-13 12:00 | <A title="发表您的评论" href="http://www.felix021.com/blog/read.php?2040#reply">评论(2)</A> 
+| <A href="http://www.felix021.com/blog/read.php?2040">阅读(27355)</A>     </DIV>
+<DIV class="textbox-content" id="zoomtext">		Translated to <A href="http://www.felix021.com/blog/page.php?pageid=6" 
+target="_blank">ENGLISH VERSION</A><BR><BR>源于这两篇文章： <BR><A href="http://blog.csdn.net/ggggiqnypgjg/article/details/6645824" 
+target="_blank">http://blog.csdn.net/ggggiqnypgjg/article/details/6645824</A><BR><A 
+href="http://zhuhongcheng.wordpress.com/2009/08/02/a-simple-linear-time-algorithm-for-finding-longest-palindrome-sub-string/" 
+target="_blank">http://zhuhongcheng.wordpress.com/2009/08/02/a-simple-linear-time-algorithm-for-finding-longest-palindrome-sub-string/</A><BR><BR>这个算法看了三天，终于理解了，在这里记录一下自己的思路，免得以后忘了又要想很久- 
+-.<BR><BR>首先用一个非常巧妙的方式，将所有可能的奇数/偶数长度的回文子串都转换成了奇数长度：在每个字符的两边都插入一个特殊的符号。比如 abba 变成 
+#a#b#b#a#， aba变成 #a#b#a#。 
+为了进一步减少编码的复杂度，可以在字符串的开始加入另一个特殊字符，这样就不用特殊处理越界问题，比如$#a#b#a#（注意，下面的代码是用C语言写就，由于C语言规范还要求字符串末尾有一个'\0'所以正好OK，但其他语言可能会导致越界）。<BR><BR>下面以字符串12212321为例，经过上一步，变成了 
+S[] = "$#1#2#2#1#2#3#2#1#";<BR><BR>然后用一个数组 P[i] 
+来记录以字符S[i]为中心的最长回文子串向左/右扩张的长度（包括S[i]，也就是把该回文串“对折”以后的长度），比如S和P的对应关系：
+<DIV class="code">S&nbsp;  #&nbsp; 1&nbsp; #&nbsp; 2&nbsp; #&nbsp; 2&nbsp; 
+#&nbsp; 1&nbsp; #&nbsp; 2&nbsp; #&nbsp; 3&nbsp; #&nbsp; 2&nbsp; #&nbsp; 1&nbsp; 
+#<BR>P&nbsp;  1&nbsp; 2&nbsp; 1&nbsp; 2&nbsp; 5&nbsp; 2&nbsp; 1&nbsp; 4&nbsp; 
+1&nbsp; 2&nbsp; 1&nbsp; 6&nbsp; 1&nbsp; 2&nbsp; 1&nbsp; 2&nbsp; 1<BR>(p.s. 
+可以看出，P[i]-1正好是原字符串中回文串的总长度）</DIV><BR>那么怎么计算P[i]呢？该算法增加两个辅助变量（其实一个就够了，两个更清晰）id和mx，其中id表示最大回文子串中心的位置，mx则为id+P[id]，也就是最大回文子串的边界。<BR><BR>然后可以得到一个非常神奇的结论，这个算法的关键点就在这里了：如果mx 
+&gt; i，那么P[i] &gt;= MIN(P[2 * id - i], mx - 
+i)。就是这个串卡了我非常久。实际上如果把它写得复杂一点，理解起来会简单很多：
+<DIV class="code">//记j = 2 * id - i，也就是说 j 是 i 关于 id 的对称点。<BR>if (mx - i &gt; 
+P[j]) <BR>&nbsp; &nbsp; P[i] = P[j];<BR>else /* P[j] &gt;= mx - i */<BR>&nbsp; 
+&nbsp; P[i] = mx - i; // P[i] &gt;= mx - 
+i，取最小值，之后再匹配更新。</DIV><BR>当然光看代码还是不够清晰，还是借助图来理解比较容易。<BR><BR>当 mx - i &gt; P[j] 
+的时候，以S[j]为中心的回文子串包含在以S[id]为中心的回文子串中，由于 i 和 j 
+对称，以S[i]为中心的回文子串必然包含在以S[id]为中心的回文子串中，所以必有 P[i] = P[j]，见下图。<BR><A href="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/1318476284_79354a47.png" 
+target="_blank"><IMG title="点击在新窗口中浏览此图片" class="insertimage" alt="点击在新窗口中浏览此图片" 
+src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/1318476284_79354a47.png" 
+border="0"></A><BR><BR>当 P[j] &gt;= mx - i 
+的时候，以S[j]为中心的回文子串不一定完全包含于以S[id]为中心的回文子串中，但是基于对称性可知，下图中两个绿框所包围的部分是相同的，也就是说以S[i]为中心的回文子串，其向右至少会扩张到mx的位置，也就是说 
+P[i] &gt;= mx - i。至于mx之后的部分是否对称，就只能老老实实去匹配了。<BR><A href="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/1318478114_4379fb5c.png" 
+target="_blank"><IMG title="点击在新窗口中浏览此图片" class="insertimage" alt="点击在新窗口中浏览此图片" 
+src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/1318478114_4379fb5c.png" 
+border="0"></A><BR><BR>对于 mx &lt;= i 的情况，无法对 P[i]做更多的假设，只能P[i] = 
+1，然后再去匹配了。<BR><BR>于是代码如下：
+<DIV class="code">//输入，并处理得到字符串s<BR>int p[1000], mx = 0, id = 0;<BR>memset(p, 0, 
+sizeof(p));<BR>for (i = 1; s[i] != '\0'; i++) {<BR>&nbsp; &nbsp; p[i] = mx &gt; 
+i ? min(p[2*id-i], mx-i) : 1;<BR>&nbsp; &nbsp; while (s[i + p[i]] == s[i - 
+p[i]]) p[i]++;<BR>&nbsp; &nbsp; if (i + p[i] &gt; mx) {<BR>&nbsp; &nbsp; &nbsp; 
+&nbsp; mx = i + p[i];<BR>&nbsp; &nbsp; &nbsp; &nbsp; id = i;<BR>&nbsp; &nbsp; 
+}<BR>}<BR>//找出p[i]中最大的</DIV><BR>OVER.<BR><BR>#UPDATE@2013-08-21 
+14:27<BR>@zhengyuee 同学指出，由于 P[id] = mx，所以 S[id-mx] != S[id+mx]，那么当 P[j] &gt; mx 
+- i 的时候，可以肯定 P[i] = mx - i 
+，不需要再继续匹配了。不过在具体实现的时候即使不考虑这一点，也只是多一次匹配（必然会fail），但是却要多加一个分支，所以上面的代码就不改了。<BR>
+<P>--</P><!-- 如果你觉得这篇文章有用，且支付宝里有点零钱，可以考虑 <a href="https://me.alipay.com/felix021" target="_blank">捐赠</a> 。<br/> --> 
+<BR>转载请注明出自 <B><SPAN id="oriurl"></SPAN></B> ，如是转载文则注明原出处，谢谢:)<BR>RSS订阅地址: <B><A 
+href="http://www.felix021.com/blog/feed.php">http://www.felix021.com/blog/feed.php</A></B> 
+。 
+<SCRIPT language="javascript" type="text/javascript">
+var _full = "";
+function $(id){ return document.getElementById(id);}
+function _wurl() {
+    var a = window.location;
+    var b = a.protocol + "//www.felix021.com" + a.pathname + a.search;
+    var c = '<a href="' + b + '">' + b + "</a>";
+    var d = document.title.replace(/ - Blog.*/, "");
+    _full = d + " rn" + b;
+    $('oriurl').innerHTML = c;
+}
+_wurl(); 
+</SCRIPT>
+         
+<HR>
+
+<DIV class="tags" style="display: none;"></DIV>
+<DIV class="textbox-bottom"><A name="xn_share" href="http://www.felix021.com/blog/read.php?2040" 
+type="button_count_left">人人分享</A>
+<SCRIPT src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/share.js" type="text/javascript"></SCRIPT>
+ |          <A title="查看分类： IT" href="http://www.felix021.com/blog/index.php?go=category_3">IT</A> 
+» <A title="查看分类： 程序设计" href="http://www.felix021.com/blog/index.php?go=category_6">程序设计</A> 
+| <A title="查看引用地址" onclick='showhidediv("tb2040"); if (document.getElementById("tbb2040")) document.getElementById("tbb2040").innerHTML=decodetburl("1%105%117%117%113%59%48%48%120%120%120%47%103%102%109%106%121%49%51%50%47%100%112%110%48%99%109%112%104%48%117%99%47%113%105%113%64%117%62%51%49%53%49%39%98%110%113%60%102%121%117%115%98%62%101%99%101%51%103", 0, 2040);' 
+href="javascript: void(0);">引用(0)</A> |          
+<DIV class="textbox-tburl" id="tb2040" 
+style="display: none;"><STRONG>引用地址：</STRONG>  <SPAN 
+id="tbb2040"></SPAN><BR><STRONG>注意：</STRONG> 该地址仅在今日23:59:59之前有效</DIV>
+<SCRIPT language="javascript" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/ooxx20091219.js"></SCRIPT>
+         </DIV></DIV></DIV>
+<DIV class="comment-wrapper" id="commentWrapper"><A name="topreply"></A>	 
+<DIV id="addnew"></DIV>
+<DIV id="blogcomment2531">
+<DIV class="commentbox">
+<DIV class="commentbox-title"><A title="查看他/她的资料" href="http://www.felix021.com/blog/view.php?go=user_301" 
+target="_blank">迷失的杰克</A>   			
+<DIV class="commentbox-label">2014-6-10 18:35    </DIV>		 </DIV>
+<DIV class="commentbox-content">如果P[i]包括S[i]，那么为啥 P[1] = 2 （i 从0开始) 呢？应该等于3吧，因为 
+S[0] = \'#\'S[1] = \'1\'S[2] = \'#\'从S[1]向左向右扩张，还包括S[1]的话，那么P[1] = 
+3?如果我说的正确，那么例子中的后面有好几个错误			 
+<DIV class="quote" id="replied_com_2531" style="display: block;">
+<DIV class="quote-title"><A title="查看他/她的资料" href="http://www.felix021.com/blog/view.php?go=user_1" 
+target="_blank">felix021</A> 回复于 2014-6-15 23:15</DIV>
+<DIV class="quote-content">“P[i] 
+来记录以字符S[i]为中心的最长回文子串向左/右扩张的长度（包括S[i]）”P[1]对应的回文串是 
+"#1#"，从S[1]起向左/右扩张1个字符，加上S[1]，就是2个，所以P[1] = 2.</DIV></DIV></DIV>
+<DIV id="com_2531" style="display: none;"></DIV></DIV></DIV>
+<DIV id="blogcomment2412">
+<DIV class="commentbox">
+<DIV class="commentbox-title"><A title="查看他/她的资料" href="http://www.felix021.com/blog/view.php?go=user_90" 
+target="_blank">wayne</A>   			
+<DIV class="commentbox-label">2011-10-13 21:17    </DIV>		 </DIV>
+<DIV class="commentbox-content">瞄了一眼，有点像用后缀数组的那种方法的感觉			 
+<DIV class="quote" id="replied_com_2412" style="display: block;">
+<DIV class="quote-title"><A title="查看他/她的资料" href="http://www.felix021.com/blog/view.php?go=user_1" 
+target="_blank">felix021</A> 回复于 2011-10-14 08:22</DIV>
+<DIV class="quote-content">曾经试图去看后缀数组，最后看晕了-。-</DIV></DIV></DIV>
+<DIV id="com_2412" style="display: none;"></DIV></DIV></DIV>
+<DIV class="comment-pages"><SPAN class="pagebar-mainbody">分页： 1/1  <A href="http://www.felix021.com/blog/read.php?entryid=2040&amp;page=1&amp;part=1"><IMG 
+title="第一页" alt="第一页" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/doubleleft.gif" 
+border="0"></A> <SPAN class="pagebar-selections"><SPAN 
+class="pagelink-current">1</SPAN> </SPAN> <A href="http://www.felix021.com/blog/read.php?entryid=2040&amp;page=1&amp;part=1"><IMG 
+title="最后页" alt="最后页" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/doubleright.gif" 
+border="0"></A> </SPAN>	 </DIV></DIV>
+<DIV class="article-bottom" style="display: none;">
+<DIV class="pages"></DIV></DIV></DIV></DIV>
+<DIV class="sidebar" id="sidebar">
+<DIV id="innerSidebar">
+<DIV class="panel">
+<H5 onclick='showhidediv("sidebar_announcement");'>联系我</H5>
+<DIV class="panel-content" id="sidebar_announcement" style="display: block;">
+<P style="text-align: center;">felix021[#]gmail.com</P></DIV></DIV>
+<DIV class="panel">
+<H5 onclick='showhidediv("sidebar_replies");'>最新评论</H5>
+<DIV class="panel-content" id="sidebar_replies" style="display: block;">
+<UL>
+  <LI class="rowcouple"><A title="[intellic] - 我想写篇日志" href="http://www.felix021.com/blog/read.php?2127#blogcomment2525">芝麻糊LOL</A></LI>
+  <LI class="rowodd"><A title="[czyhd] - [求解]台式机升级出问题了" href="http://www.felix021.com/blog/read.php?2130#blogcomment2523">主板？</A></LI>
+  <LI class="rowcouple"><A title="[snoopy] - [求解]台式机升级出问题了" href="http://www.felix021.com/blog/read.php?2130#blogcomment2522">我记得我以前那个台式机在某..</A></LI>
+  <LI class="rowodd"><A title="[ctqmumu] - 记坑" href="http://www.felix021.com/blog/read.php?2108#blogcomment2521">查看上下月这种操作... 
+  我都..</A></LI>
+  <LI class="rowcouple"><A title="[ctqmumu] - 使用ctypes来扩展Python" href="http://www.felix021.com/blog/read.php?2124#blogcomment2520">我在想额外的两个问题：1. 
+  能..</A></LI>
+  <LI class="rowodd"><A title="[ctqmumu] - 我想写篇日志" href="http://www.felix021.com/blog/read.php?2127#blogcomment2519">我一般是 
+  持续一段时间吃一套..</A></LI>
+  <LI class="rowcouple"><A title="[inextime] - 我想写篇日志" href="http://www.felix021.com/blog/read.php?2127#blogcomment2518">喝多了不见得对男人好. 
+  女的..</A></LI>
+  <LI class="rowodd"><A title="[inextime] - 我想写篇日志" href="http://www.felix021.com/blog/read.php?2127#blogcomment2517">少喝豆浆, 
+  建议完毕.</A></LI>
+  <LI class="rowcouple"><A title="[lanisle] - 坑爹的crontab #2" href="http://www.felix021.com/blog/read.php?2018#blogcomment2516">sh 
+  -l ...</A></LI>
+  <LI class="rowodd"><A title="[wzxjohn] - ucloud体验报告" href="http://www.felix021.com/blog/read.php?2119#blogcomment2515">xx云指的是阿里的么。。。他..</A></LI></UL></DIV></DIV>
+<DIV class="panel" id="panelCategory">
+<H5 style="cursor: pointer;" 
+onclick='showhidediv("sideblock_category");'>分类</H5>
+<DIV class="panel-content" id="sideblock_category" style="display: block;">
+<UL>
+  <LI><A title="fck" href="http://www.felix021.com/blog/index.php?go=category_24">杂碎</A> 
+  [13] <A href="http://www.felix021.com/blog/feed.php?go=category_24"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI><A title="各种杂碎。" href="http://www.felix021.com/blog/index.php?go=category_3">IT</A> 
+  [708] <A href="http://www.felix021.com/blog/feed.php?go=category_3"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="Linux &amp; M$... &amp; Commands" href="http://www.felix021.com/blog/index.php?go=category_13">操作系统</A> 
+  [125] <A href="http://www.felix021.com/blog/feed.php?go=category_13"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="just python" href="http://www.felix021.com/blog/index.php?go=category_25">Python</A> 
+  [11] <A href="http://www.felix021.com/blog/feed.php?go=category_25"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="就是对设计模式的探索拉" href="http://www.felix021.com/blog/index.php?go=category_23">探索设计模式</A> 
+  [5] <A href="http://www.felix021.com/blog/feed.php?go=category_23"><IMG title="追踪这个分类的RSS" 
+  alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="电脑->软件" href="http://www.felix021.com/blog/index.php?go=category_4">软件</A> 
+  [84] <A href="http://www.felix021.com/blog/feed.php?go=category_4"><IMG title="追踪这个分类的RSS" 
+  alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="电脑->硬件" href="http://www.felix021.com/blog/index.php?go=category_5">硬件</A> 
+  [40] <A href="http://www.felix021.com/blog/feed.php?go=category_5"><IMG title="追踪这个分类的RSS" 
+  alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="手机~~~~" href="http://www.felix021.com/blog/index.php?go=category_19">手机</A> 
+  [12] <A href="http://www.felix021.com/blog/feed.php?go=category_19"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="电脑->程序设计C / C++ / VC / ACM / ASM ..." href="http://www.felix021.com/blog/index.php?go=category_6">程序设计</A> 
+  [162] <A href="http://www.felix021.com/blog/feed.php?go=category_6"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="电脑->网络 PHP HTML Apache IIS ASP 。。。" href="http://www.felix021.com/blog/index.php?go=category_7">网络</A> 
+  [196] <A href="http://www.felix021.com/blog/feed.php?go=category_7"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="大多数是MYSQL~ 还有一点ADO～" href="http://www.felix021.com/blog/index.php?go=category_15">数据库</A> 
+  [18] <A href="http://www.felix021.com/blog/feed.php?go=category_15"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="Virus～～～～～" href="http://www.felix021.com/blog/index.php?go=category_14">病毒</A> 
+  [7] <A href="http://www.felix021.com/blog/feed.php?go=category_14"><IMG title="追踪这个分类的RSS" 
+  alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI>
+  <LI class="indent"><A title="和电脑相关的没归类的东西。。。" href="http://www.felix021.com/blog/index.php?go=category_22">其他</A> 
+  [48] <A href="http://www.felix021.com/blog/feed.php?go=category_22"><IMG 
+  title="追踪这个分类的RSS" alt="RSS" src="Manacher's%20ALGORITHM%20O(n)时间求字符串的最长回文子串%20-%20Blog%20of%20Felix021%20-%20TechOnly_php_files/rss.png" 
+  border="0"></A></LI></UL></DIV></DIV>
+<DIV class="panel">
+<H5 onclick='showhidediv("sidebar_misc");'>其他</H5>
+<DIV class="panel-content" id="sidebar_misc" style="display: block;"><A href="http://www.felix021.com/blog/login.php">登入</A><BR><A 
+href="http://www.felix021.com/blog/login.php?job=register">注册</A><BR>RSS： <A 
+href="http://www.felix021.com/blog/feed.php">日志</A> | <A href="http://www.felix021.com/blog/feed.php?go=comment">评论</A><BR>编码：UTF-8<BR><A 
+href="http://validator.w3.org/check?uri=referer" target="_blank">XHTML 1.0</A> 
+</DIV></DIV>
+<DIV class="panel">
+<H5 onclick='showhidediv("sidebar_statistics");'>统计</H5>
+<DIV class="panel-content" id="sidebar_statistics" style="display: block;">访问次数 
+2205677<BR>今日访问 470<BR>日志数量 2102<BR><A href="http://www.felix021.com/blog/view.php?go=comment">评论数量 
+2295</A><BR><A href="http://www.felix021.com/blog/view.php?go=tb">引用数量 
+1</A><BR><A href="http://www.felix021.com/blog/guestbook.php">留言数量 143</A><BR><A 
+href="http://www.felix021.com/blog/view.php?go=userlist">注册用户 300</A><BR><A 
+href="http://www.felix021.com/blog/admin.php?act=viewstat" target="_blank">在线人数 
+25 </A><BR></DIV></DIV>
+<DIV class="panel">
+<H5 onclick='showhidediv("sidebar_link");'>链接</H5>
+<DIV class="panel-content" id="sidebar_link" style="display: block;">
+<UL>
+  <LI><STRONG>默认链接组</STRONG></LI>
+  <LI class="indent"><A title="WHU微软俱乐部 - 武汉大学微软技术俱乐部" href="http://www.whumstc.com/" 
+  target="_blank">WHU微软俱乐部</A></LI>
+  <LI><STRONG>朋友们的据点</STRONG></LI>
+  <LI class="indent"><A title="czyhd's Blog - " href="http://www.wangtianqi.com/" 
+  target="_blank">czyhd's Blog</A></LI>
+  <LI class="indent"><A title="姜南的BLOG - " href="http://www.slyar.com/" target="_blank">姜南的BLOG</A></LI>
+  <LI class="indent"><A title="Kid的原创Blog - " href="http://liulixiang.info/" 
+  target="_blank">Kid的原创Blog</A></LI>
+  <LI class="indent"><A title="[GCC]Feli - 可爱的小宠物" href="http://www.gccfeli.cn/" 
+  target="_blank">[GCC]Feli</A></LI>
+  <LI class="indent"><A title="彼岸·花开·荼靡 - lovely little Sheen" href="http://blog.sina.com.cn/sheen526" 
+  target="_blank">彼岸·花开·荼靡</A></LI>
+  <LI class="indent"><A title="谁见过风？ - -.-这个会显示么" href="http://www.seenthewind.cn/" 
+  target="_blank">谁见过风？</A></LI>
+  <LI class="indent"><A title="不敢流泪 - Boluor的博客" href="http://www.boluor.com/" 
+  target="_blank">不敢流泪</A></LI>
+  <LI class="indent"><A title="Liuw’s Thinkpad - 人似秋鸿有来信，事如春梦了无痕" href="http://blog.liuw.name/" 
+  target="_blank">Liuw’s Thinkpad</A></LI>
+  <LI class="indent"><A title="Pumpkin’s - 文艺小青年的博客；这个真不是H网站。" href="http://mousun.com/" 
+  target="_blank">Pumpkin’s</A></LI>
+  <LI class="indent"><A title="FOUR - 肆肆" href="http://hi.baidu.com/xuanyuanfour" 
+  target="_blank">FOUR</A></LI>
+  <LI class="indent"><A title="快乐云の小屋 - 愿做一朵简单快乐的云，平平淡淡了此一生" href="http://guyun.me/" 
+  target="_blank">快乐云の小屋</A></LI>
+  <LI class="indent"><A title="张磊的blog - " href="http://www.blogkid.net/" 
+  target="_blank">张磊的blog</A></LI>
+  <LI class="indent"><A title="Felix's Blog - Felix Yan //另一个Felix ~.~" href="http://felixcat.net/" 
+  target="_blank">Felix's Blog</A></LI>
+  <LI class="indent"><A title="Zhang Jiuan's notes - 久安的博客" href="http://blog.niukey.com/" 
+  target="_blank">Zhang Jiuan's notes</A></LI>
+  <LI class="indent"><A title="Frank's Blog - " href="http://zhangyuyu.com/" 
+  target="_blank">Frank's Blog</A></LI>
+  <LI class="indent"><A title="intijk - " href="http://intijk.com/" target="_blank">intijk</A></LI>
+  <LI class="indent"><A title="{Sunny's Blog} - 高总！" href="http://sunshineg.com/" 
+  target="_blank">{Sunny's Blog}</A></LI>
+  <LI class="indent"><A title="PortWatcher's Blog - Know it,then hack it." href="http://www.pwhack.me/" 
+  target="_blank">PortWatcher's Blog</A></LI>
+  <LI><STRONG>链链接接^_^</STRONG></LI>
+  <LI class="indent"><A title="mlzy - " href="http://www.mlzy.net/" target="_blank">mlzy</A></LI>
+  <LI class="indent"><A title="LiuYu's LOGS - 刘宇的博客" href="http://logs.lioyu.com/" 
+  target="_blank">LiuYu's LOGS</A></LI>
+  <LI class="indent"><A title="dutor - C++,Program,wordpress,hints, hacks, techniques, tips, tricks" 
+  href="http://www.dutor.net/" 
+target="_blank">dutor</A></LI></UL></DIV></DIV></DIV></DIV></DIV>
+<DIV id="footer">
+<DIV id="innerFooter"><SPAN id="nav_http_3A_2F_2Fwww.miibeian.gov.cn"><A href="http://www.miibeian.gov.cn/" 
+target="_blank"><SPAN 
+id="navitem_http_3A_2F_2Fwww.miibeian.gov.cn"><BR></SPAN></A></SPAN>			 
+<DIV id="processtime"></DIV></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fed9aac8b449c2670b9adb0cb74b035e8' type='text/javascript'%3E%3C/script%3E"));
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17899266-1']);
+  _gaq.push(['_setDomainName', '.felix021.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+highlighter();
+loadSidebar();
+</SCRIPT>
+ </BODY></HTML>

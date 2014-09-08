@@ -1,0 +1,411 @@
+body {
+	background: url("images/bg.jpg"); margin: 2px 2px 10px; padding: 0px; text-align: center; font-family: Consolas, Book Antiqua, Tahoma, Arial; font-size: 12px;
+}
+img {
+	border: 0px currentColor; border-image: none;
+}
+table {
+	font-family: Tahoma, Arial; font-size: 12px;
+}
+td {
+	line-height: 18px; font-size: 12px; -ms-word-break: break-all;
+}
+div {
+	line-height: 18px; font-size: 12px; -ms-word-break: break-all;
+}
+a {
+	color: rgb(0, 34, 255); text-decoration: none;
+}
+a:hover {
+	color: rgb(204, 0, 0); text-decoration: underline;
+}
+hr {
+	border-width: 1px 0px 0px; border-style: solid none none; border-color: rgb(204, 204, 204) currentColor currentColor; border-image: none; height: 1px;
+}
+acronym {
+	text-decoration: none; border-bottom-color: rgb(61, 107, 131); border-bottom-width: 1px; border-bottom-style: dotted; cursor: help;
+}
+form {
+	display: inline;
+}
+input {
+	font-family: Tahoma, Arial; font-size: 12px;
+}
+input.text {
+	padding: 1px; border: 1px solid rgb(0, 167, 221); border-image: none; height: 20px;
+}
+input.button {
+	border: 1px solid rgb(0, 167, 221); border-image: none; height: 20px; background-color: rgb(255, 255, 255);
+}
+textarea {
+	background: url("images/bgtrans.png"); border: 1px solid rgb(0, 167, 221); border-image: none; font-family: Tahoma, Arial; font-size: 12px;
+}
+select {
+	border: 1px solid rgb(0, 167, 221); border-image: none; font-family: Tahoma, Arial; font-size: 12px;
+}
+#header {
+	text-align: center; margin-top: 10px;
+}
+#wrapper {
+	margin: 0px auto; width: 980px; text-align: left;
+}
+#innerWrapper {
+	width: 100%;
+}
+#innerHeader {
+	height: 300px; padding-top: 0px; padding-right: 12px; padding-left: 10px; vertical-align: bottom;
+}
+#footer {
+	height: 80px; clear: both;
+}
+#footer a {
+	color: rgb(0, 0, 0);
+}
+#innerFooter {
+	text-align: center; color: rgb(0, 0, 0); padding-top: 2px; font-size: 12px;
+}
+#ft {
+	text-align: center; color: rgb(102, 102, 102); clear: both; font-family: Verdana; font-size: 12px;
+}
+#ft a {
+	color: rgb(102, 102, 204);
+}
+.blog-header {
+	padding: 220px 20px 0px; visibility: hidden;
+}
+h1 {
+	margin: 0px; padding: 0px; font-size: 24px; font-weight: bold;
+}
+h1 a {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+h1 a:hover {
+	color: rgb(0, 0, 204); text-decoration: none;
+}
+.blog-desc {
+	color: rgb(255, 255, 255);
+}
+#menu {
+	height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-family: Verdana; font-size: 14px; font-weight: bold; margin-top: 5px; background-color: rgb(0, 170, 255);
+}
+#menu ul {
+	margin: 0px; padding: 0px;
+}
+#menu li {
+	list-style: none; margin: 0px; padding: 0px; width: 78px; text-align: center; border-right-color: rgb(255, 255, 255); border-right-width: 1px; border-right-style: solid; float: left;
+}
+#menu a {
+	color: rgb(255, 255, 255); padding-right: 4px; padding-left: 4px; display: block;
+}
+#menu a:hover {
+	text-decoration: none; background-color: rgb(0, 112, 221);
+}
+#menu .activepage a {
+	text-decoration: none; background-color: rgb(0, 112, 221);
+}
+#mainWrapper {
+	margin-right: 8px; margin-left: 8px;
+}
+.sidebar {
+	width: 215px; padding-top: 4px; padding-left: 3px; float: left;
+}
+.sidebar-hide {
+	float: left; display: none;
+}
+#innerSidebar {
+	padding: 3px;
+}
+.content {
+	width: 100%; margin-left: -225px; float: right;
+}
+.content-wide {
+	width: auto; margin-left: -200px;
+}
+.content-only {
+	width: 100%; margin-left: -180px;
+}
+#innerContent {
+	overflow: visible; margin-top: 5px; margin-right: 5px; margin-left: 220px;
+}
+.clear {
+	clear: both; margin-top: -1px !important; border-top-color: transparent !important; border-top-width: 1px !important; border-top-style: solid !important; visibility: hidden;
+}
+.panel {
+	background: url("images/bgtrans.png"); padding: 0px; font-size: 12px; margin-bottom: 10px;
+}
+.panel h5 {
+	background: rgb(136, 199, 255); margin: 0px; height: 24px; text-align: center; line-height: 24px; padding-left: 6px; font-size: 12px; font-weight: bold; border-top-color: rgb(0, 167, 221); border-right-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-left-style: solid;
+}
+.panel h5 a {
+	color: rgb(255, 255, 255);
+}
+.panel-content {
+	padding: 6px; line-height: 20px; font-size: 12px; margin-bottom: 10px; border-right-color: rgb(0, 167, 221); border-bottom-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;
+}
+.panel-content ul {
+	margin: 0px 0px 0px 2px; padding: 1px;
+}
+.panel-content li {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.panel-content li.indent {
+	padding: 0px; text-indent: 15px;
+}
+.panel-content ul ul li {
+	padding: 0px; text-indent: 15px;
+}
+#loginForm {
+	width: 95%;
+}
+#calendar {
+	width: 100%; margin-top: 1px;
+}
+.calendar-top {
+	padding: 0px; text-align: center;
+}
+.calendar-year {
+	font-weight: bold;
+}
+.calendar-month {
+	font-weight: bold;
+}
+.calendar-weekdays {
+	padding: 0px; width: 14%; text-align: center; font-size: 12px;
+}
+.calendar-weekday-cell {
+	padding: 0px; width: 14%; text-align: center; color: rgb(61, 107, 131); font-size: 12px; font-weight: bold;
+}
+.calendar-day {
+	padding: 0px; width: 14%; text-align: center;
+}
+.calendar-day-blank {
+	padding: 0px; width: 14%; text-align: center;
+}
+.calendar-saturday {
+	padding: 0px; width: 14%; text-align: center;
+}
+.calendar-sunday {
+	padding: 0px; width: 14%; text-align: center;
+}
+.calendar-today {
+	padding: 0px; width: 14%; text-align: center;
+}
+.calendar-saturday {
+	color: rgb(38, 75, 101);
+}
+.calendar-sunday {
+	color: rgb(38, 75, 101);
+}
+.calendar-today {
+	background-color: rgb(0, 167, 221);
+}
+.calendar-day a {
+	color: rgb(61, 107, 131); font-weight: bold; text-decoration: underline;
+}
+.calendar-saturday a {
+	color: rgb(61, 107, 131); font-weight: bold; text-decoration: underline;
+}
+.calendar-sunday a {
+	color: rgb(61, 107, 131); font-weight: bold; text-decoration: underline;
+}
+.calendar-today a {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+.search-field {
+	border: 1px solid rgb(0, 167, 221); border-image: none; width: 125px; margin-top: 5px;
+}
+.announce {
+	margin-bottom: 15px; border-right-color: rgb(53, 96, 128); border-left-color: rgb(53, 96, 128) !important; border-right-width: 2px; border-left-width: 2px !important; border-right-style: solid; border-left-style: solid !important;
+}
+.announce-content {
+	padding: 10px; color: rgb(0, 0, 0);
+}
+.article-top {
+	padding: 5px; margin-bottom: 15px;
+}
+.article-bottom {
+	padding: 5px; margin-top: 15px;
+}
+.pages {
+	
+}
+.pagelink-current {
+	font-weight: bold;
+}
+.listbox {
+	background: url("images/bgtrans.png"); padding-top: 5px; padding-bottom: 5px;
+}
+.listbox-table {
+	width: 99%;
+}
+.listbox-header {
+	height: 25px; text-align: center; font-weight: bold;
+}
+.listbox-entry {
+	color: rgb(7, 106, 166); border-bottom-color: rgb(143, 174, 192); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.listbox-entry a {
+	
+}
+.prev-article {
+	float: left;
+}
+.next-article {
+	float: right;
+}
+.textbox {
+	background: url("images/bgtrans.png"); margin-top: 7px; margin-bottom: 5px;
+}
+.textbox-title {
+	background: rgb(136, 199, 255); height: 24px; line-height: 24px; padding-top: 2px; padding-left: 10px; font-size: 16px; font-weight: bold; border-top-color: rgb(0, 167, 221); border-right-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-left-style: solid;
+}
+.textbox-title a {
+	color: rgb(0, 0, 0);
+}
+.textbox-label {
+	padding-top: 3px; padding-left: 5px; font-size: 12px; border-right-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.textbox-fontsize {
+	padding: 3px; text-align: right; font-size: 14px; border-right-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; float: right;
+}
+.textbox-content {
+	padding: 8px 6px; line-height: 20px; font-size: 14px; margin-bottom: 10px; border-right-color: rgb(0, 167, 221); border-bottom-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; -ms-word-wrap: break-word;
+}
+.textbox-bottom {
+	padding: 1px 0px 2px; text-align: right; color: rgb(0, 167, 221); font-size: 12px;
+}
+.textbox-adminbar {
+	padding: 0px 0px 4px; text-align: right; font-size: 12px;
+}
+.textbox-tburl {
+	text-align: left; color: rgb(0, 167, 221); padding-top: 3px; padding-left: 15px; font-size: 12px;
+}
+.tags {
+	text-align: left; padding-top: 3px; padding-bottom: 3px; padding-left: 15px; font-size: 12px;
+}
+.comment-wrapper {
+	
+}
+.comment-top {
+	margin: 5px; padding: 0px 5px 5px; text-align: right; color: rgb(0, 167, 221);
+}
+.comment-pages {
+	margin: 5px; padding: 5px; color: rgb(0, 167, 221);
+}
+.commentbox {
+	background: url("images/bgtrans.png"); margin: 5px; padding: 0px; -ms-word-wrap: break-word;
+}
+.commentbox-title {
+	background: rgb(136, 199, 255); padding: 5px; height: 16px; line-height: 16px; font-size: 12px; font-weight: bold; border-top-color: rgb(0, 167, 221); border-right-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-left-style: solid;
+}
+.commentbox-title a {
+	color: rgb(0, 0, 0);
+}
+.commentbox-label {
+	font-size: 12px; display: inline;
+}
+.commentbox-content {
+	padding: 3px 3px 14px; line-height: 20px; font-size: 12px; margin-bottom: 10px; border-right-color: rgb(0, 167, 221); border-bottom-color: rgb(0, 167, 221); border-left-color: rgb(0, 167, 221); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid;
+}
+.trackbackbox {
+	background: url("images/bgtrans.png"); margin: 5px; padding: 0px;
+}
+.trackbackbox-title {
+	padding: 5px; border-left-color: rgb(0, 167, 221); border-left-width: 3px; border-left-style: solid;
+}
+.trackbackbox-label {
+	color: rgb(0, 167, 221); font-size: 12px; display: inline;
+}
+.trackbackbox-content {
+	padding: 3px 3px 14px;
+}
+.trackbackbox a {
+	color: rgb(0, 0, 0);
+}
+#commentForm {
+	width: 99%;
+}
+.messagebox {
+	background: url("images/bgtrans.png"); border: 1px solid rgb(0, 167, 221); border-image: none; width: 500px; text-align: center; margin-top: 120px;
+}
+.messagebox-title {
+	padding: 5px; font-weight: bold;
+}
+.messagebox-content {
+	padding: 10px 10px 20px; text-align: left;
+}
+.messagebox-bottom {
+	padding: 5px;
+}
+.formbox {
+	
+}
+.formbox-comment {
+	padding-top: 10px;
+}
+.formbox-title {
+	padding: 5px; color: rgb(0, 167, 221); font-weight: bold;
+}
+.formbox-comment-title {
+	padding: 5px; color: rgb(0, 167, 221); font-weight: bold;
+}
+.formbox-rowheader {
+	padding: 5px; font-weight: bold;
+}
+.formbox-content {
+	padding: 5px;
+}
+.panel-smilies {
+	padding: 5px; text-align: center;
+}
+.panel-smilies-title {
+	text-align: left; color: rgb(61, 107, 131); border-bottom-color: rgb(104, 111, 117); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.panel-smilies-content {
+	padding: 5px; line-height: 120%;
+}
+.code {
+	border-width: 1px 1px 1px 3px; border-style: dashed dashed dashed solid; border-color: rgb(0, 167, 221); margin: 5px; padding: 10px; border-image: none; color: rgb(0, 0, 0); font-family: Consolas, Courier New, monospace, ËÎÌו; font-size: 13px;
+}
+.kw {
+	color: rgb(221, 61, 19); font-size: 14px; font-weight: bolder;
+}
+.quote {
+	margin: 10px; border-left-color: rgb(214, 192, 148); border-left-width: 0px; border-left-style: solid;
+}
+.quote-title {
+	padding: 5px; font-weight: bold; border-bottom-color: rgb(0, 167, 221) !important; border-bottom-width: 1px !important; border-bottom-style: dashed !important;
+}
+.quote-title img {
+	padding-right: 3px; margin-bottom: -4px;
+}
+.quote-content {
+	border-width: 0px; border-style: none solid solid; border-color: currentColor rgb(230, 235, 239) rgb(230, 235, 239); padding: 10px; border-image: none; color: rgb(0, 0, 0); font-family: consolas, courier new, monospace; font-size: 14px;
+}
+.linkover {
+	height: auto; clear: both; margin-bottom: 50px;
+}
+.linkbody {
+	width: 50%; margin-top: 5px; float: left;
+}
+.linkimg {
+	text-align: right; margin-right: 4px; float: left;
+}
+.linktxt {
+	float: left;
+}
+.linktitle a {
+	font-weight: bold;
+}
+.linkgroup {
+	color: rgb(0, 167, 221); font-size: 14px; font-weight: bold; margin-bottom: 5px;
+}
+#v_content {
+	width: 480px;
+}
+#editcomcontent3 {
+	width: 670px;
+}
+#sidebar_ContactMe {
+	padding: 0px;
+}
