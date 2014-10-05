@@ -1,140 +1,192 @@
 <!DOCTYPE html>
-<html lang="ch">
 <head>
-        <meta charset="utf-8" />
-        <title>追梦少年</title>
-        <link rel="stylesheet" href="./theme/css/main.css" />
-        <link href="http://dreamapple.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="追梦少年 Atom Feed" />
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <title>追梦少年</title>
+
+    <link rel="stylesheet" href="./theme/css/normalize.css" />
+    <link rel="stylesheet" href="./theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="./theme/css/style.css" />
+    <link rel="stylesheet" href="./theme/css/pygments.css" />	
+    <script src="./theme/js/modernizr.js"></script>
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="./">追梦少年 </a></h1>
-                <nav><ul>
-                    <li><a href="./category/pelican.html">pelican</a></li>
-                    <li><a href="./category/python.html">Python</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<body>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="./how-to-use-pelican.html">How to use pelican</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2014-09-08T14:48:00">
-                Published: 周一 08 九月 2014
-        </abbr>
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href=".">追梦少年</a></h1>
+    </div>
+</div>
+</div>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/dreamapple.html">Dreamapple</a>
-        </address>
-<p>In <a href="./category/pelican.html">pelican</a>. </p>
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
 
-</footer><!-- /.post-info --><h3>Quickstart</h3>
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="./pyqt.html"><h3 class="article-title">pyqt信号与槽的笔记</h3></a>
+<h6 class="subheader" title="2014-10-03T21:20:00">周五 03 十月 2014
+</h6>
+
+
+<p>在pyqt旧式的信号与槽的连接中</p>
+<blockquote>
+<p>self.connect(obj1, PyQt4.QtCore.SIGNAL("signal1(int)"),obj2, PyQt4.QtCore.SIGNAL("signal2(int)"))</p>
+</blockquote>
+<p>的作用是信号1的发射可以触发信号2也发射。</p>
+<p>在新式的语法中，要是也想使用，必须先在obj2中定义信号</p>
+<blockquote>
+<p>class obj2:
+    signal2=PyQt4.QtCore.Signal(int)</p>
+</blockquote>
+<p>接下来，就可以</p>
+<blockquote>
+<p>obj1.signal1[int].connect(obj2.signal2[int].emit)</p>
+</blockquote>
+<p>进行连接。或者直接</p>
+<blockquote>
+<p>obj1.signal1[int].connect(obj2.signal2[int]）</p>
+</blockquote><p class="subheader">Category: <a href="./category/python.html">Python</a>
+
+    Tagged: 
+    <a href="./tag/python.html">Python </a>
+    <a href="./tag/pyqt.html">pyqt </a>
+</p>
+
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
+                <a href="./how-to-use-pelican.html"><h3 class="article-title">How to use pelican</h3></a>
+<h6 class="subheader" title="2014-09-08T14:48:00">周一 08 九月 2014
+</h6>
+
+
+<h3>Quickstart</h3>
 <p>Reading through all the documentation is highly recommended, but for the truly impatient, following are some quick steps to get started.</p>
 <h2>Installation</h2>
 <p>Install Pelican on Python 2.7.x or Python 3.3+ by running the following command in your preferred terminal, prefixing with sudo if permissions warrant:</p>
 <blockquote>
-<p>pip install pelican markdown</p>
-</blockquote>
-<h2>Create a project</h2>
-<p>First, choose a name for your project, create an appropriately-named directory for your it, and switch to that directory:</p>
-<blockquote>
-<p>mkdir -p ~/projects/yoursite
-cd ~/projects/yoursite</p>
-</blockquote>
-<h2>Create a skeleton project via the pelican-quickstart command, which begins by asking some questions about your site:</h2>
-<blockquote>
-<p>pelican-quickstart</p>
-</blockquote>
-<p>For questions that have default values denoted in brackets, feel free to use the Return key to accept those default values. When asked for your URL prefix, enter your domain name as indicated (e.g., http://example.com).</p>
-<h2>Create an article</h2>
-<p>You cannot run Pelican until you have created some content. Use your preferred text editor to create your first article with the following content:</p>
-<blockquote>
-<p>Title: My First Review
-Date: 2010-12-03 10:20
-Category: Review</p>
-</blockquote>
-<p>Following is a review of my favorite mechanical keyboard.</p>
-<p>Given that this example article is in Markdown format, save it as &gt;~/projects/yoursite/content/keyboard-review.md.</p>
-<h2>Generate your site</h2>
-<p>From your project directory, run the pelican command to generate your site:</p>
-<blockquote>
-<p>pelican content</p>
-</blockquote>
-<p>Your site has now been generated inside the output directory. (You may see a warning related to feeds, but that is normal when developing locally and can be ignored for now.)</p>
-<h2>Preview your site</h2>
-<p>Open a new terminal session and run the following commands to switch to your output directory and launch Python’s built-in web server:</p>
-<blockquote>
-<p>cd ~/projects/yoursite/output
-python -m SimpleHTTPServer</p>
-</blockquote>
-<p>Preview your site by navigating to http://localhost:8000/ in your browser.</p>
-<p>Continue reading the other documentation sections for more detail, and check out the Pelican wiki’s Tutorials page for links to community-published tutorials.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>pip ...</p></blockquote><p class="subheader">Category: <a href="./category/pelican.html">pelican</a>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./my-super-post.html" rel="bookmark"
-                           title="Permalink to My super title">My super title</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2010-12-03T10:20:00">
-                Published: 周五 03 十二月 2010
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/alexis-metaireau.html">Alexis Metaireau</a>
-        </address>
-<p>In <a href="./category/python.html">Python</a>. </p>
-<p>tags: <a href="./tag/pelican.html">pelican</a> <a href="./tag/publishing.html">publishing</a> </p>
-</footer><!-- /.post-info -->                <p>Short version for index and feeds</p>
-                <a class="readmore" href="./my-super-post.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 1
 </p>
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://dreamapple.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+                <a class="button radius secondary small right" href="./how-to-use-pelican.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
 
+        
+
+
+            <article>
+                <a href="./my-super-post.html"><h3 class="article-title">My super title</h3></a>
+<h6 class="subheader" title="2010-12-03T10:20:00">周五 03 十二月 2010
+</h6>
+
+
+<p>Short version for index and feeds</p><p class="subheader">Category: <a href="./category/python.html">Python</a>
+
+    Tagged: 
+    <a href="./tag/pelican.html">pelican </a>
+    <a href="./tag/publishing.html">publishing </a>
+</p>
+
+
+
+                <a class="button radius secondary small right" href="./my-super-post.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+            <!-- /#posts-list -->
+<div class="pagination-centered">
+<h6 class="subheader">Page 1 of 1</h6>
+
+<p>
+
+</p>
+</div>
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="./archives.html">Archives</a>
+            <li><a href="./tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="./category/pelican.html">pelican</a></li>
+            <li><a href="./category/python.html">Python</a></li>
+   
+        </ul>
+
+        <h5 class="sidebar-title">Links</h5>
+        <ul class="side-nav">
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="#">You can add links in your config file</a></li>
+            <li><a href="#">Another social link</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>追梦少年 by Dreamapple</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
 </body>
 </html>
