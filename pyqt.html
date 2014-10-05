@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>追梦少年</title>
+    <title>pyqt信号与槽的笔记</title>
 
     <link rel="stylesheet" href="./theme/css/normalize.css" />
     <link rel="stylesheet" href="./theme/css/foundation.min.css" />
@@ -42,10 +42,45 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
-<ul class="circle">
-	<li><a href="category/pelican.html">pelican</a></li>
-	<li><a href="category/python.html">Python</a></li>
-</ul>
+<article>
+    <header>
+        <h3 class="article-title"><a href="./pyqt.html" rel="bookmark"
+        title="Permalink to pyqt信号与槽的笔记">pyqt信号与槽的笔记</a></h3>
+    </header>
+
+<h6 class="subheader" title="2014-10-03T21:20:00">周五 03 十月 2014
+</h6>
+
+
+    <p>在pyqt旧式的信号与槽的连接中</p>
+<blockquote>
+<p>self.connect(obj1, PyQt4.QtCore.SIGNAL("signal1(int)"),obj2, PyQt4.QtCore.SIGNAL("signal2(int)"))</p>
+</blockquote>
+<p>的作用是信号1的发射可以触发信号2也发射。</p>
+<p>在新式的语法中，要是也想使用，必须先在obj2中定义信号</p>
+<blockquote>
+<p>class obj2:
+    signal2=PyQt4.QtCore.Signal(int)</p>
+</blockquote>
+<p>接下来，就可以</p>
+<blockquote>
+<p>obj1.signal1[int].connect(obj2.signal2[int].emit)</p>
+</blockquote>
+<p>进行连接。或者直接</p>
+<blockquote>
+<p>obj1.signal1[int].connect(obj2.signal2[int]）</p>
+</blockquote>
+<p class="subheader">Category: <a href="./category/python.html">Python</a>
+
+    Tagged: 
+    <a href="./tag/python.html">Python </a>
+    <a href="./tag/pyqt.html">pyqt </a>
+</p>
+
+
+
+
+</article>
     </div>
     <!-- End Main Content -->
 
