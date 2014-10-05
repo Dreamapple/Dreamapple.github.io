@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>追梦少年</title><link href="http://dreamapple.tk/" rel="alternate"></link><link href="http://dreamapple.tk/feeds/all.atom.xml" rel="self"></link><id>http://dreamapple.tk/</id><updated>2014-10-03T21:20:00+08:00</updated><entry><title>pyqt信号与槽的笔记</title><link href="http://dreamapple.tk/pyqt.html" rel="alternate"></link><updated>2014-10-03T21:20:00+08:00</updated><author><name>Dreamapple</name></author><id>tag:dreamapple.tk,2014-10-03:pyqt.html</id><summary type="html">&lt;p&gt;在pyqt旧式的信号与槽的连接中&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;self.connect(obj1, PyQt4.QtCore.SIGNAL("signal1(int)"),obj2, PyQt4.QtCore.SIGNAL("signal2(int)"))&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;的作用是信号1的发射可以触发信号2也发射。&lt;/p&gt;
-&lt;p&gt;在新式的语法中，要是也想使用，必须先在obj2中定义信号&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;class obj2:
-    signal2=PyQt4.QtCore.Signal(int)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;接下来，就可以&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;obj1.signal1[int].connect(obj2.signal2[int].emit)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;进行连接。或者直接&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;obj1.signal1[int].connect(obj2.signal2[int]）&lt;/p&gt;
-&lt;/blockquote&gt;</summary><category term="Python"></category><category term="pyqt"></category></entry><entry><title>How to use pelican</title><link href="http://dreamapple.tk/how-to-use-pelican.html" rel="alternate"></link><updated>2014-09-08T14:48:00+08:00</updated><author><name>Dreamapple</name></author><id>tag:dreamapple.tk,2014-09-08:how-to-use-pelican.html</id><summary type="html">&lt;h3&gt;Quickstart&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>追梦少年</title><link href="http://dreamapple.tk/" rel="alternate"></link><link href="http://dreamapple.tk/feeds/all.atom.xml" rel="self"></link><id>http://dreamapple.tk/</id><updated>2014-09-08T14:48:00+02:00</updated><entry><title>How to use pelican</title><link href="http://dreamapple.tk/how-to-use-pelican.html" rel="alternate"></link><updated>2014-09-08T14:48:00+02:00</updated><author><name>Dreamapple</name></author><id>tag:dreamapple.tk,2014-09-08:how-to-use-pelican.html</id><summary type="html">&lt;h3&gt;Quickstart&lt;/h3&gt;
 &lt;p&gt;Reading through all the documentation is highly recommended, but for the truly impatient, following are some quick steps to get started.&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Install Pelican on Python 2.7.x or Python 3.3+ by running the following command in your preferred terminal, prefixing with sudo if permissions warrant:&lt;/p&gt;
@@ -56,4 +39,4 @@ Category: Review&lt;/p&gt;
 python -m SimpleHTTPServer&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Preview your site by navigating to http://localhost:8000/ in your browser.&lt;/p&gt;
-&lt;p&gt;Continue reading the other documentation sections for more detail, and check out the Pelican wiki’s Tutorials page for links to community-published tutorials.&lt;/p&gt;</summary></entry><entry><title>My super title</title><link href="http://dreamapple.tk/my-super-post.html" rel="alternate"></link><updated>2010-12-03T10:20:00+08:00</updated><author><name>Alexis Metaireau</name></author><id>tag:dreamapple.tk,2010-12-03:my-super-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>
+&lt;p&gt;Continue reading the other documentation sections for more detail, and check out the Pelican wiki’s Tutorials page for links to community-published tutorials.&lt;/p&gt;</summary></entry><entry><title>My super title</title><link href="http://dreamapple.tk/my-super-post.html" rel="alternate"></link><updated>2010-12-03T10:20:00+01:00</updated><author><name>Alexis Metaireau</name></author><id>tag:dreamapple.tk,2010-12-03:my-super-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>
